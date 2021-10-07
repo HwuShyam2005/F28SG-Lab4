@@ -101,4 +101,20 @@ public class DLinkedListTest {
 		assertNull(dll.getHeadValue());
 		assertNull(dll.getTailValue());
 	}
+	
+	@Test
+	public void testReverseFive() {
+		dll.addAtHead(10);	
+		dll.addAtHead(8);		
+		dll.addAtHead(6);	
+		dll.addAtHead(4);
+		dll.addAtHead(2);
+		dll.reverse();
+		Integer[] arr = {10,8,6,4,2};
+		
+		for (int i=0; i<5; i++)
+		{
+			assertEquals(arr[i], dll.get(i));
+		}
+	}
 }
