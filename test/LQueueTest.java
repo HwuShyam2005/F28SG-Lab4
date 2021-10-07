@@ -56,8 +56,8 @@ public class LQueueTest {
 	public void testDequeue() {
 		// enqueue multiple elements to the queue
 
-		// then check that they a returned in the
-		// correct order with q.dequeue()
+		// then check that they are returned in the
+		// correct order with dequeue.
 		fail("not implemented yet");
 	}
 	
