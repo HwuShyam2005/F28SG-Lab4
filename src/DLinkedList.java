@@ -123,10 +123,31 @@ public class DLinkedList {
 		return res;
 	}
 
+	/**
+	 * @param idx the index position of the value
+	 * @return the value in the list at a given index
+	 */
+	public Object get(int idx) {
+		Object value = null;
+		int i = 0;
+		Node n = headNode;
+		while (i <= idx) {
+			if (n == null) {
+				return -1;
+			}
+			else {
+				value = n.getValue();
+				n = n.getNextNode();
+				i++;
+			}
+		}
+		return value;
+	}
+
 	
 	// Part 4: complete
 	public void reverse(){
-		
+
 	}	
 
 }
