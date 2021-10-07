@@ -1,11 +1,4 @@
 
-
-class QueueException extends RuntimeException{    
-	public QueueException(String err) {
-		super(err);
-	}
-}
-
 public class Queue {
 	private int f; // front of queue
 	private int r; // rear of queue
