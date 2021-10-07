@@ -1,10 +1,26 @@
+@SuppressWarnings("serial")
 class StackException extends RuntimeException{    
 	public StackException(String err) {
 		super(err);
 	}
 }
 
-public class Stack {
+/**
+ * An implementation of a Stack class.
+ * 
+ * It uses an array {@code S} internally to store the stack values.
+ * 
+ * It uses Java Generics (the {@code <T>} parameter), meaning that
+ * the class can be instantiated to store values of any type e.g.
+ * 
+ * <pre>{@code
+ * Stack s1 = new Stack<String>();   // a stack of Strings.
+ * Stack s1 = new Stack<Integer>();  // a stack of Integers.
+ * }</pre>
+ *
+ * @param <T> the Class of the values that the stack will store
+ */
+public class Stack<T> {
 	private Object[] S;
 	private int top;
 	private int capacity;
@@ -30,22 +46,26 @@ public class Stack {
 	}
 	
 
-	public void push(Object e){
+	public void push(T e){
 		if(size() == capacity)
 			throw new StackException("stack is full");
 		S[++top] = e;
 	}
 	
-	public Object pop() throws StackException{
+	@SuppressWarnings("unchecked")
+	public T pop() throws StackException{
 		if(isEmpty())
 			throw new StackException("stack is empty");
-		return S[top--];
+		// this type cast is safe because we type checked the push method
+		return (T) S[top--];
 	}
 	
-	public Object top() throws StackException{
+	@SuppressWarnings("unchecked")
+	public T top() throws StackException{
 		if(isEmpty())
 			throw new StackException("stack is empty");
-		return S[top];
+		// this type cast is safe because we type checked the push method
+		return (T) S[top];
 	}
 	
 	public String toString(){
