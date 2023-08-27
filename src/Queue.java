@@ -1,5 +1,7 @@
-
-public class Queue {
+/*
+ * Queue implementation with an array.
+ */
+public class Queue implements QueueADT {
 	private int f; // front of queue
 	private int r; // rear of queue
 	private int capacity;

@@ -1,4 +1,7 @@
-public class LQueue {
+/*
+ * Queue implementation with a linked list.
+ */
+public class LQueue implements QueueADT {
 	
 	private class Node{
 		Object element;
@@ -22,6 +25,7 @@ public class LQueue {
 	public LQueue(){
 		head = null;
 		tail = null;	
+		size = 0;
 	}
 	
 	/*
@@ -39,7 +43,7 @@ public class LQueue {
 	}
 	
 	// Part 3: complete
-	public void enqueue(Object o){
+	public void enqueue(Object o) {
 
 	}
 	

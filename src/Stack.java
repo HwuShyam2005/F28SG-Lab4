@@ -20,7 +20,7 @@ class StackException extends RuntimeException{
  *
  * @param <T> the Class of the values that the stack will store
  */
-public class Stack<T> {
+public class Stack<T> implements StackADT<T> {
 	private Object[] S;
 	private int top;
 	private int capacity;
