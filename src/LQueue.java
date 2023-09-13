@@ -33,26 +33,61 @@ public class LQueue implements QueueADT {
 	 */
 	
 	// Part 3: complete	
+	/**
+	 * Returns true if the queue is empty, false otherwise.
+	 * 
+	 * TODO Where N is the number of elements in the queue the complexity is:
+	 *
+	 * O(?)
+	 */
 	public boolean isEmpty(){
 		return false; // dummy value
 	}
 	
 	// Part 3: complete
+	/**
+	 * Returns how many elements are in the queue.
+	 * 
+	 * TODO Where N is the number of elements in the queue the complexity is:
+	 *
+	 * O(?)
+	 */
 	public int size(){
 		return -1; // dummy value 
 	}
 	
 	// Part 3: complete
+	/**
+	 * Adds a new element to the end of the queue.
+	 * 
+	 * TODO Where N is the number of elements in the queue the complexity is:
+	 *
+	 * O(?)
+	 */
 	public void enqueue(Object o) {
 
 	}
 	
 	// Part 3: complete	
+	/**
+	 * Removes the element at the front of the queue.
+	 * 
+	 * TODO Where N is the number of elements in the queue the complexity is:
+	 *
+	 * O(?)
+	 */
 	public Object dequeue() throws QueueException{
 		return null; // dummy value
 	}
 	
 	// Part 3: complete
+	/**
+	 * Returns the element at the front of the queue without removing it.
+	 * 
+	 * TODO Where N is the number of elements in the queue the complexity is:
+	 *
+	 * O(?)
+	 */
 	public Object front() throws QueueException{
 		return null; // dummy value
 	}
