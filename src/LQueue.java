@@ -1,7 +1,4 @@
-/*
- * Queue implementation with a linked list.
- */
-public class LQueue implements QueueADT {
+public class LQueue {
 	
 	private class Node{
 		Object element;
@@ -25,7 +22,6 @@ public class LQueue implements QueueADT {
 	public LQueue(){
 		head = null;
 		tail = null;	
-		size = 0;
 	}
 	
 	/*
@@ -34,62 +30,77 @@ public class LQueue implements QueueADT {
 	
 	// Part 3: complete	
 	/**
-	 * Returns true if the queue is empty, false otherwise.
-	 * 
-	 * TODO Where N is the number of elements in the queue the complexity is:
-	 *
-	 * O(?)
+	 * Checking if queue is empty
+	 * @return boolean value affter checking if stack is empty
 	 */
 	public boolean isEmpty(){
-		return false; // dummy value
+		return (head==tail);
 	}
 	
 	// Part 3: complete
 	/**
-	 * Returns how many elements are in the queue.
-	 * 
-	 * TODO Where N is the number of elements in the queue the complexity is:
-	 *
-	 * O(?)
+	 * Checking the size of queue
+	 * @return size of queue
 	 */
 	public int size(){
-		return -1; // dummy value 
+		return size; 
 	}
 	
 	// Part 3: complete
 	/**
-	 * Adds a new element to the end of the queue.
-	 * 
-	 * TODO Where N is the number of elements in the queue the complexity is:
-	 *
-	 * O(?)
+	 * Adding a new element in queue
+	 * @param o
 	 */
-	public void enqueue(Object o) {
+	public void enqueue(Object o){
+		//CREATION OF NEW NODE
+		Node newnode = new Node(o);
+		//TO CHECK IF THE HEAD IS NULL AND ADDING NEW NODE
+		if (head==null) {
+			head=newnode;
+			tail=newnode;
+		}
+		//IF ITS NOT EMPTY , THEN ADD A NEW NODE AT THE TAIL 
+		else {
+			tail.next=newnode;
+			tail=newnode;
+		}
+		//INCREASING THE SIZE
+		size++;
 
 	}
 	
 	// Part 3: complete	
 	/**
-	 * Removes the element at the front of the queue.
-	 * 
-	 * TODO Where N is the number of elements in the queue the complexity is:
-	 *
-	 * O(?)
+	 * Removing a element from queue
+	 * @return element thats removed
+	 * @throws QueueException
 	 */
 	public Object dequeue() throws QueueException{
-		return null; // dummy value
+		//HANDLES AN EXCEPTION IF THE QUEUE IS EMPTY
+		if(head==null) 
+			throw new QueueException("Queue is empty");
+		//REMOVING THE ELEMENTS FROM THE FRONT
+		else {
+			Object temp=head.element;
+			head=head.next;
+			return temp;
+		}
 	}
 	
 	// Part 3: complete
 	/**
-	 * Returns the element at the front of the queue without removing it.
-	 * 
-	 * TODO Where N is the number of elements in the queue the complexity is:
-	 *
-	 * O(?)
+	 * Returning the element at head
+	 * @return the first element in queue
+	 * @throws QueueException
 	 */
 	public Object front() throws QueueException{
-		return null; // dummy value
+		//HANDLES AN EXCEPTION IF THE QUEUE IS EMPTY
+		if(head==null)
+			throw new QueueException("Queue is empty");
+		//RETURNS THE HEAD ELEMENT
+		else {
+			return head.element;
+		}
 	}
 	
 }

@@ -34,7 +34,6 @@ public class DLinkedList {
 		public void setPrevNode(Node n) {
 			prevNode = n;
 		}
-	
 	}
 
 	// Holds a reference to the head and tail of the list
@@ -146,10 +145,29 @@ public class DLinkedList {
 
 	
 	// Part 4: complete
+	/*
+* Reversing a linked list
+	 */
 	public void reverse(){
-
+		//CHECK IF THE LINKED LIST IS NULL OR NOT
+		if(headNode != null) {
+		//CREATION OF POINTER FOR TRAVERSING THE LIST
+			Node head = headNode;
+			Node temp = null;
+			//ITERATING THROUGH THE LIST WHILE NODES ARE PRESENT
+			while(head != null) {
+				//SWAPPING THE PREVIOUS AND THE NEXT NODES
+				temp = head.prevNode;
+				head.prevNode = head.nextNode;
+				head.nextNode = temp;
+				temp = head;
+				head = head.prevNode;
+		}
+		//CHANGING HEAD NODE AND TAIL NODE TO COMPLETE THE REVERSAL
+		temp = headNode;
+		headNode = tailNode;
+		tailNode = temp;
+		}
 	}	
 
 }
-
-

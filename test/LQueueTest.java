@@ -18,56 +18,60 @@ public class LQueueTest {
 	
 	@Test
 	public void testIsEmpty() {
-		// test that q.isEmpty returns true
-		fail("not implemented yet");
+		//TEST FOR Q.ISEMPTY FOR WHICH IT RETURNS TRUE
+		assertEquals(true,q.isEmpty());
 	}
 	
 	@Test
 	public void testIsEmptyFalse() {
-		// add an element to the queue "q"
-		
-		// then test that q is not an empty queue.
-		fail("not implemented yet");
+		//ADDITION OF ELEMENTS TO THE "Q" QUEUE
+		q.enqueue(1);
+		//TESTING TO DECLARE Q IS NOT AN EMPTY QUEUE
+		assertEquals(1,q.size());
 	}
 
 	@Test
 	public void testSizeEmpty() {
-		// test the size of an empty queue is 0
-		fail("not implemented yet");
+		//TESTING THE SIZE OF AN EMPTY QUEUE IS 0
+		assertEquals(0,q.size());
 	}
-	
 	@Test
 	public void testSizeNonEmpty() {
-		// add an element(s) to the queue
-
-		// then test the size of the queue
-		fail("not implemented yet");
+		//ADDITION OF ELEMENTS TO THE QUEUE
+		q.enqueue(5);
+		q.enqueue(6);
+		//TEST FOR CHECKING THE SIZE OF QUEUE
+		assertEquals(2,q.size());
 	}
 
 	@Test
 	public void testEnqueue() {
-		// enqueue an element(s) to the queue
-		
-		// then test that the correct element is at the front
-		fail("not implemented yet");
+		//ENQUEUING THE ELEMENTS TO THE QUEUE 
+		q.enqueue(5);
+		q.enqueue(6);
+		//AFTER THAT TEST IF THE CORRECT ELEMENTS IS AT FRONT
+		assertEquals(5,q.front());
 	}
 	
 	@Test
 	public void testDequeue() {
-		// enqueue multiple elements to the queue
-
-		// then check that they are returned in the
-		// correct order with dequeue.
-		fail("not implemented yet");
+		//ENQUEUING THE  MULTIPLE ELEMENTS INTO QUEUE
+		q.enqueue(5);
+		q.enqueue(6);
+		//CHECKING IF THEY RETURNED IN THE CORRECT ORDER WITH RESPECT TO DEQUEUE
+		assertEquals(5,q.dequeue());
+		assertEquals(6,q.dequeue());
 	}
 	
 	@Test(expected = QueueException.class)  
 	public void testEmptyDequeue() {  
-		// try to dequeue an empty queue
+		//TRYING TO DEQUEUE AN EMPTY QUEUE
+		q.dequeue();
 	}
 	
 	@Test(expected = QueueException.class)  
 	public void testEmptyFront() {
-		// try to get the front value of an empty queue
+		//TRYING TO GET THE FRONT VALUE OF THE EMPTY QUEUE
+		q.front();
 	}
 }
